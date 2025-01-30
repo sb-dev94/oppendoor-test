@@ -1,0 +1,64 @@
+@use "../../styles/variables" as vars;
+
+.selectBox {
+  position: relative;
+  display: inline-block;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: vars.$white;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 5.5px 8px 5.5px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease-in-out;
+  transform: rotate(180deg);
+}
+
+.rotated {
+  transform: none;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  min-width: 160px;
+  background: vars.$white;
+  list-style: none;
+  padding: 0;
+  margin: 4px 0;
+  z-index: 15;
+  border: 2px solid #222;
+  box-shadow: 0 10px 22px rgba(29, 71, 123, 0.08),
+    0 2px 12px rgba(29, 71, 123, 0.08);
+  border-radius: 8px;
+  padding: 5px 0;
+}
+
+.option {
+  font-size: 12px;
+  height: 32px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.option:hover {
+  background: vars.$off-white;
+}
+
+.selected {
+  background: vars.$off-white;
+}

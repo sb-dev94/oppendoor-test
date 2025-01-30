@@ -1,0 +1,100 @@
+@use "../../styles/variables" as vars;
+@use "../../styles/mixins" as *;
+
+.listingCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 16px;
+  background-color: vars.$white;
+  box-shadow: rgba(29, 71, 123, 0.04) 0px 5px 10px,
+    rgba(29, 71, 123, 0.12) 0px 1px 5px;
+  margin-bottom: 20px;
+  width: 100%;
+  overflow: hidden;
+
+  @include tablet {
+    flex-direction: column;
+    min-width: none;
+  }
+}
+
+.listingCardImgContainer {
+  flex-basis: 45%;
+  max-width: 45%;
+  max-height: 188px;
+  position: relative;
+
+  @include tablet {
+    max-height: unset;
+    aspect-ratio: 3 / 2;
+    max-width: 100%;
+  }
+}
+
+.listingCardImg {
+  width: 100%;
+  height: 100%;
+}
+
+.listingCardDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 55%;
+  max-width: 55%;
+  padding: 20px 22px 15px 32px;
+  width: 100%;
+}
+
+.listingCardPrice {
+  font-size: 19px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.listingCardLineItem {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: vars.$gray;
+}
+
+.listingCardFavourite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: vars.$white;
+  color: vars.$black;
+  border: none;
+  border-radius: 9999px;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 10;
+  height: 40px;
+  width: 40px;
+
+  &:hover {
+    background-color: vars.$gray-light;
+  }
+}
+
+.listingCardTour {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: vars.$white;
+  border-color: vars.$light-blue;
+  border: 2px solid #f2f2f2;
+  border-radius: 8px;
+  color: vars.$gray-dark;
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 4px 8px;
+  z-index: 10;
+}

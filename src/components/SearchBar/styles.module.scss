@@ -1,0 +1,66 @@
+@use "../../styles/variables" as vars;
+
+.searchContainer {
+  position: relative;
+  width: 200px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    fill: vars.$gray;
+  }
+
+  .input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    color: vars.$gray;
+    width: 100%;
+    font-weight: 300;
+    font-size: 14px;
+    font-family: "Graphik";
+
+    &::placeholder {
+      color: vars.$gray;
+      font-weight: 300;
+      font-family: "Graphik";
+      font-size: 16px;
+    }
+  }
+
+  &:hover .icon,
+  &:hover .input::placeholder {
+    fill: vars.$blue;
+    color: vars.$blue;
+  }
+}
+
+.focused {
+  .icon,
+  .input::placeholder {
+    fill: vars.$black !important;
+    color: vars.$black !important;
+  }
+}
+
+.underline {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: vars.$black;
+  transition: width 0.3s ease-in-out;
+}
+
+.active {
+  width: 100%;
+}

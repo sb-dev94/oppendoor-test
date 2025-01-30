@@ -1,0 +1,59 @@
+@use "./styles/mixins.scss" as *;
+
+.mainContainer {
+  height: calc(100vh - 78px);
+  position: relative;
+}
+
+.leftPane {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  width: calc(100vw - 680px);
+  overflow: hidden;
+  z-index: -1;
+
+  @include tablet {
+    width: 50vw;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.rightPane {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: calc(100vw - 680px);
+  min-width: 680px;
+  width: 680px;
+  overflow-y: scroll;
+
+  @include tablet {
+    min-width: unset;
+    width: 50vw;
+    left: 50vw;
+  }
+
+  @include mobile {
+    left: 0px;
+    width: 100%;
+    z-index: 1;
+    transition: left 0.3s ease;
+  }
+}
+
+.hiddenLeftPane {
+  @include mobile {
+    display: none;
+  }
+}
+
+.hiddenRightPane {
+  @include mobile {
+    left: -9999px;
+  }
+}
