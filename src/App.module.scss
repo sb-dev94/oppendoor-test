@@ -12,7 +12,6 @@
   top: 0;
   width: calc(100vw - 680px);
   overflow: hidden;
-  z-index: -1;
 
   @include tablet {
     width: 50vw;

@@ -1,5 +1,6 @@
 import React from "react";
 import SortOptionsPanel from "../SortOptionsPanel";
+import MapBox from "../MapBox";
 import styles from "./styles.module.scss";
 
 const Map = () => {
@@ -8,7 +9,7 @@ const Map = () => {
       <div className={styles.sortOptionsPanelContainer}>
         <SortOptionsPanel />
       </div>
-      <img className={styles.map} src="/map.png" alt="Static Map" />
+      <MapBox />
     </div>
   );
 };
